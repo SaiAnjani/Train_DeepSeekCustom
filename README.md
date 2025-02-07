@@ -124,22 +124,27 @@ MoE increases model capacity without proportional compute cost increase.
        expert_counts[expert_idx] = expert_mask.sum()
    ```
 
-## Benefits
+## Parameters
+    Total Parameters: 25,373,440
+    Trainable Parameters: 25,373,440
+    
+    Layer-wise parameters:
+    --------------------------------------------------
+    embed_tokens: 12,582,912 parameters
+    layers: 12,790,272 parameters
+      └─ 0: 2,131,712 parameters
+      └─ 1: 2,131,712 parameters
+      └─ 2: 2,131,712 parameters
+      └─ 3: 2,131,712 parameters
+      └─ 4: 2,131,712 parameters
+      └─ 5: 2,131,712 parameters
+    norm: 256 parameters
+    lm_head: 12,582,912 parameters
+    ==================================================
+    Loaded 341094 tokens
+    Vocabulary size: 49152
 
-1. **Efficiency**:
-   - Reduced memory usage through key-value head compression
-   - Efficient local context processing
-   - Dynamic computation routing
 
-2. **Performance**:
-   - Better handling of both local and global dependencies
-   - Increased model capacity through expert specialization
-   - Balanced computational load
-
-3. **Scalability**:
-   - Architecture scales well with model size
-   - Efficient resource utilization
-   - Prevents bottlenecks through load balancing
 
 ## Usage
     python
@@ -155,3 +160,130 @@ MoE increases model capacity without proportional compute cost increase.
     max_new_tokens=100,
     temperature=0.8
     )
+
+## Logs
+    Step 500/10001 | Loss: 6.5418 | dt: 146.33ms | tok/sec:  874.72
+    Step 1000/10001 | Loss: 5.1189 | dt: 143.01ms | tok/sec:  895.05
+    Step 1500/10001 | Loss: 4.7368 | dt: 215.59ms | tok/sec:  593.73
+    Step 2000/10001 | Loss: 6.4701 | dt: 144.47ms | tok/sec:  886.01
+    Step 2500/10001 | Loss: 5.4151 | dt: 141.82ms | tok/sec:  902.53
+    Step 3000/10001 | Loss: 5.8982 | dt: 137.99ms | tok/sec:  927.61
+    Step 3500/10001 | Loss: 5.3119 | dt: 142.92ms | tok/sec:  895.61
+    Step 4000/10001 | Loss: 5.1425 | dt: 177.16ms | tok/sec:  722.52
+    Step 4500/10001 | Loss: 5.3831 | dt: 143.16ms | tok/sec:  894.09
+    Step 5000/10001 | Loss: 5.1892 | dt: 134.66ms | tok/sec:  950.52
+    Step 5500/10001 | Loss: 4.6916 | dt: 151.91ms | tok/sec:  842.58
+    Step 6000/10001 | Loss: 4.6858 | dt: 144.54ms | tok/sec:  885.55
+    Step 7500/10001 | Loss: 3.7104 | dt: 142.56ms | tok/sec:  897.85
+    Step 8000/10001 | Loss: 4.7647 | dt: 217.34ms | tok/sec:  588.93
+    Step 8500/10001 | Loss: 5.1420 | dt: 178.10ms | tok/sec:  718.70
+    Step 9000/10001 | Loss: 4.0006 | dt: 138.61ms | tok/sec:  923.46
+    Step 9500/10001 | Loss: 5.1212 | dt: 140.47ms | tok/sec:  911.24
+    Step 10000/10001 | Loss: 4.9295 | dt: 134.74ms | tok/sec:  949.96
+
+## Generated samples
+    === Generated Samples ===
+
+    Sample 1:
+    --------------------------------------------------
+    <|endoftext|> in the meets
+    our with her taken my poor dismiss we fear,
+    Good, no a Nature
+    My lord will any as I have you
+    As
+     any!
+    
+    
+    My bad,
+    And it beern,
+    Yourforts loss now-often: but stands thanks e upShe he Some for the matters way. aOL, course,
+    So now you.
+    
+    As now you
+    --
+    
+    You isle would she would she appeared?
+    If you on were
+    --------------------------------------------------
+    
+    Sample 2:
+    --------------------------------------------------
+    <|endoftext|>!
+    
+     oath I am ability.
+    Will you would tender on leave
+    I am a obedient, but that's tale
+    To have sheina promisedhimAnd do you would make thy man
+    You have lightione.
+    Would not not qualify more, were you to be An then my see so drop much singular heir
+    He from her in the
+    
+     war that
+    For they with the saint,
+    As,
+    You the behalf not, in, which I am shores
+    
+    My
+    --------------------------------------------------
+    
+    Sample 3:
+    --------------------------------------------------
+    <|endoftext|>
+    Is anySome. O, and theurse;
+    To give him, ared thee
+     known a sens you equipped whose she steal.
+    
+    CAM
+    
+     uponGood manween.
+    I am not not a man.
+    She desire in removed you than the prince.
+    You have has amore sunPA not
+    And, what which
+    Andio, yet my pl not
+    Ay,
+    What I would not his walk.
+    C give him behalf thouLEer I have
+    --------------------------------------------------
+    
+    Sample 4:
+    --------------------------------------------------
+    <|endoftext|>
+    As you foundw new nor being home of stir
+    As with me eye.
+    
+    LEONTES:
+    The father is present heard? I'll makees
+    Didst
+    POLia hast more last, in she world,
+    Well,
+    Do, it now then, my ' none with word?
+    Al of a forget of that she will I have that I may not a pieces; but you, to say you is to not fail:
+    Th
+    As alters I'll
+    --------------------------------------------------
+    
+    Sample 5:
+    --------------------------------------------------
+    <|endoftext|>.
+    
+    PAULINA:
+    No,No'er you: I had beresh.
+    
+    Clow you:
+    My resemblance not over, d since
+    And you reason ascore.
+    As I make hermuch liking me sorry she swear
+     threeSheMaster hear you.
+    So in my lord,
+    As you, I have affection
+    ress! Pol you that poor we boundless,
+    What,
+     sorrow the draw; more talko, to give then you like your
+    --------------------------------------------------
+    =====================
+
+
+
+    
+
